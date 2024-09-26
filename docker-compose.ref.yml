@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node-app:
+    container_name: node-app-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src:ro  # Correctly formatted volume mount
+    ports:
+      - "8000:8000"  # Corrected spelling
+    env_file:
+      - ./.env
